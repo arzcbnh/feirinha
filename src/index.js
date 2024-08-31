@@ -47,3 +47,21 @@ app.get("/items", (req, res) => {
     const response = type ? items.filter(item => item.type === type) : items;
     res.send(response);
 });
+
+app.get("/items/:id", (req, res) => {
+    const id = Number(req.params.id);
+
+    if (isNaN(id) || id < 1) {
+        res.sendStatus(httpStatus.BAD_REQUEST);
+        return;
+    }
+
+    const item = items.find(item => item.id === id);
+
+    if (item == null) {
+        res.sendStatus(httpStatus.NOT_FOUND);
+        return;
+    }
+
+    res.send(item);
+});
