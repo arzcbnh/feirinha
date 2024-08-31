@@ -41,3 +41,9 @@ app.post("/items", (req, res) => {
     items.push({ id: currId++, ...item });
     res.sendStatus(httpStatus.CREATED);
 });
+
+app.get("/items", (req, res) => {
+    const type = req.query.type;
+    const response = type ? items.filter(item => item.type === type) : items;
+    res.send(response);
+});
