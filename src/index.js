@@ -65,3 +65,5 @@ app.get("/items/:id", (req, res) => {
 
     res.send(item);
 });
+
+app.listen(5000);
