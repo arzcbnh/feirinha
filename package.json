@@ -2,10 +2,10 @@
   "name": "feirinha",
   "type": "module",
   "version": "0.1.0",
-  "main": "src/index.js",
+  "main": "src/app.js",
   "scripts": {
-    "start": "node src/index.js",
-    "dev": "nodemon src/index.js"
+    "start": "node src/app.js",
+    "dev": "nodemon src/app.js"
   },
   "author": "Matheus Henrique",
   "description": "API Rest de uma feirinha",
